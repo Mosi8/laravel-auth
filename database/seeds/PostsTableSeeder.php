@@ -15,12 +15,11 @@ class PostsTableSeeder extends Seeder
     public function run(Faker $faker)
     {
 
-        for ($i=0; $i < 15; $i++) { 
+        for ($i=0; $i < 7; $i++) { 
             $post = new Post();
             $post->title = $faker->words(7, true);
             $post->content = $faker->text();
             $post->slug = Str::of($post->title)->slug("-");
-            $post->published = rand(0,1);
             
             $post->save();
         }

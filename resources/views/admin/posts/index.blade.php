@@ -1,24 +1,23 @@
-{{-- @extends('layouts.app')
+@extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            Ciao
-            @dump($posts)
-        </div>
-    </div>
-</div>
-@endsection --}}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    @dump($posts)
-</body>
-</html>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Titolo</th>
+        <th scope="col">Slug</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach ($posts as $item)
+        <tr>
+            <th scope="row">{{$item['id']}}</th>
+            <td>{{$item['title']}}</td>
+            <td>{{$item['slug']}}</td>
+        </tr>
+      @endforeach
+    </tbody>
+  </table>
+@endsection
+
