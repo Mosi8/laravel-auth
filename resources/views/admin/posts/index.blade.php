@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<a href="{{route('admin.posts.create')}}" class="d-inline-block m-3"><button type="button" class="btn btn-warning">Crea Post</button></a>
 <table class="table">
     <thead>
       <tr>
